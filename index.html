@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>範例網站</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{ message }}</div>
+
+        <button @click="count++">
+            Count is: {{ count }}
+        </button>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue
+
+        function condown(date) {
+            
+        }
+
+        const testfunction = (userName) => {
+            console.log('testfunction');
+            console.log('a1', name);
+        };
+
+        function testfunction2(a2) {
+            console.log('testfunction2');
+            console.log('a2', a2);
+        }
+
+        const data = {
+            name: 'test',
+            age: 18,
+        };
+        testfunction(data.name);
+        testfunction2(data.name);
+
+
+        createApp({
+            setup() {
+                const message = ref('Hello vue!');
+                const count = ref(0);
+                return {
+                    message,
+                    count,
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>
